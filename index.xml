@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Parker G. McGee</title>
+    <link>http://parkergmcgee.com/</link>
+    <description>Recent content on Parker G. McGee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Dec 2017 06:36:47 -0500</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://parkergmcgee.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://example.org/about/</link>
+      <link>http://parkergmcgee.com/about/</link>
       <pubDate>Fri, 29 Dec 2017 06:36:47 -0500</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>http://parkergmcgee.com/about/</guid>
       <description>This is about me.</description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
+      <link>http://parkergmcgee.com/posts/my-first-post/</link>
       <pubDate>Fri, 29 Dec 2017 06:34:10 -0500</pubDate>
       
-      <guid>http://example.org/posts/my-first-post/</guid>
+      <guid>http://parkergmcgee.com/posts/my-first-post/</guid>
       <description>This is my first post! Wooohoo!</description>
     </item>
     
