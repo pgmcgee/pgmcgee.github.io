@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Parker McGee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2019 15:13:19 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jan 2019 21:42:00 -0500</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploiting Icecast 2.0.1 with Metasploit</title>
+      <link>/exploiting-icecast-2.0.1-with-metasploit/</link>
+      <pubDate>Thu, 10 Jan 2019 21:42:00 -0500</pubDate>
+      
+      <guid>/exploiting-icecast-2.0.1-with-metasploit/</guid>
+      <description>Icecast is an streaming media server used to create Internet radio stations. In 2004, a vulnerability was discovered in the way Icecast handles headers. This vulnerability can be used to inject any malicious code an attacker would want to run on a target system. We&amp;rsquo;re going to use it to get access to a computer in our lab environment.
+In this first article, I am going to explain how to exploit this vulnerability with Metasploit so you can get your hands dirty quickly with very little technical knowledge.</description>
+    </item>
     
     <item>
       <title>Hello World</title>

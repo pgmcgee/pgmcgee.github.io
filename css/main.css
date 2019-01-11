@@ -21,6 +21,30 @@ h6 {
   color: #222;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5 {
+  font-size: 1.05em;
+}
+
+h6 {
+  font-size: 1.0em;
+}
+
 pre,
 code {
   font-family: 'Roboto Mono', monospace;
@@ -425,6 +449,10 @@ blockquote {
   content: "\f09b";
 }
 
+.fa-twitter::before {
+  content: "\f099"
+}
+
 .fa-tags::before {
   content: "\f02c";
   float: left;
@@ -437,6 +465,21 @@ blockquote {
   padding: 0 10px 0px 0;
 }
 
+#TableOfContents {
+  font-size: 0.8em;
+  border-left: 3px solid #eee;
+  margin-left: 20px;
+}
+
+#TableOfContents ul {
+  list-style-type: none;
+  padding-inline-start: 20px;
+}
+
+#TableOfContents a {
+  color: #444;
+}
+
 @media (min-width: 600px) {
   code {
     padding: 2px 4px;
@@ -444,7 +487,7 @@ blockquote {
 
   pre,
   code {
-    font-size: 17px;
+    font-size: 0.95em;
   }
 
   .header {
@@ -452,7 +495,7 @@ blockquote {
   }
 
   .nav-links {
-    font-size: 18px;
+    font-size: 1em;
   }
 
   .nav-links li {
@@ -460,37 +503,37 @@ blockquote {
   }
 
   .content {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 1.8;
     margin: 100px auto;
   }
 
   .article-title {
-    font-size: 42px;
+    font-size: 2.2em;
   }
 
   .article-date {
-    font-size: 19px;
+    font-size: 1em;
   }
 
   .article-taxonomy {
-    font-size: 17px;
+    font-size: 0.9em;
   }
 
   .list-title,
   .category-title,
   .tag-cloud-title {
-    font-size: 38px;
+    font-size: 2em;
   }
 
   .list-item a {
     padding: 5px 0;
-    font-size: 21px;
+    font-size: 1.1em;
   }
 
   .list-item-date {
     padding: 5px 0;
-    font-size: 17px;
+    font-size: 0.9em;
     text-align: right;
     float: right;
   }
@@ -500,7 +543,7 @@ blockquote {
   }
 
   .category-item a {
-     font-size: 21px;
+     font-size: 1.1em;
   }
 
   .footer-links {
@@ -512,10 +555,10 @@ blockquote {
   }
 
   .page-links {
-    font-size: 19px;
+    font-size: 1em;
   }
 
   .error-page-title {
-    font-size: 114px;
+    font-size: 8em;
   }
 }
