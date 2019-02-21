@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Parker McGee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jan 2019 21:42:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 13 Feb 2019 06:49:40 -0500</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploiting Icecast 2.0.1 with Proof of Concept</title>
+      <link>/exploiting-icecast-2.0.1-with-proof-of-concept/</link>
+      <pubDate>Wed, 13 Feb 2019 06:49:40 -0500</pubDate>
+      
+      <guid>/exploiting-icecast-2.0.1-with-proof-of-concept/</guid>
+      <description>In the last post, we looked at exploiting Icecast with Metasploit. For this tutorial, you should follow the &amp;ldquo;Setup&amp;rdquo; and &amp;ldquo;Setting up Icecast&amp;rdquo; sections from the last post before continuing.
+Proof of Concept Many exploits that are shared with the public are released with &amp;ldquo;proof of concept&amp;rdquo; code that prove those exploits work. By utilizing these proofs of concept, it&amp;rsquo;s possible to exploit a vulnerability before a more major tool, such as Metasploit, has implemented it in it&amp;rsquo;s toolchain.</description>
+    </item>
     
     <item>
       <title>Exploiting Icecast 2.0.1 with Metasploit</title>
