@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Parker McGee</title>
@@ -13,40 +12,15 @@
     
     
     <item>
-      <title>Exploiting Icecast 2.0.1 with Proof of Concept</title>
-      <link>/exploiting-icecast-2.0.1-with-proof-of-concept/</link>
+      <title>Posts</title>
+      <link>/post/</link>
       <pubDate>Wed, 13 Feb 2019 06:49:40 -0500</pubDate>
       
-      <guid>/exploiting-icecast-2.0.1-with-proof-of-concept/</guid>
-      <description>In the last post, we looked at exploiting Icecast with Metasploit. For this tutorial, you should follow the &amp;ldquo;Setup&amp;rdquo; and &amp;ldquo;Setting up Icecast&amp;rdquo; sections from the last post before continuing.
-Proof of Concept Many exploits that are shared with the public are released with &amp;ldquo;proof of concept&amp;rdquo; code that prove those exploits work. By utilizing these proofs of concept, it&amp;rsquo;s possible to exploit a vulnerability before a more major tool, such as Metasploit, has implemented it in it&amp;rsquo;s toolchain.</description>
+      <guid>/post/</guid>
+      <description></description>
     </item>
     
     
-    
-    <item>
-      <title>Exploiting Icecast 2.0.1 with Metasploit</title>
-      <link>/exploiting-icecast-2.0.1-with-metasploit/</link>
-      <pubDate>Thu, 10 Jan 2019 21:42:00 -0500</pubDate>
-      
-      <guid>/exploiting-icecast-2.0.1-with-metasploit/</guid>
-      <description>Icecast is an streaming media server used to create Internet radio stations. In 2004, a vulnerability was discovered in the way Icecast handles headers. This vulnerability can be used to inject any malicious code an attacker would want to run on a target system. We&amp;rsquo;re going to use it to get access to a computer in our lab environment.
-In this first article, I am going to explain how to exploit this vulnerability with Metasploit so you can get your hands dirty quickly with very little technical knowledge.</description>
-    </item>
-    
-    
-    
-    
-    
-    <item>
-      <title>Hello World</title>
-      <link>/hello-world/</link>
-      <pubDate>Tue, 01 Jan 2019 15:13:19 -0500</pubDate>
-      
-      <guid>/hello-world/</guid>
-      <description>Hello world!
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</description>
-    </item>
     
     
   </channel>
