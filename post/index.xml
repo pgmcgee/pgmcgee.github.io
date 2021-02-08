@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Parker McGee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Feb 2019 06:49:40 -0500</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Feb 2021 06:00:00 -0500</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SUNSPOT: An Alternative Approach</title>
+      <link>/sunspot-an-alternative-approach/</link>
+      <pubDate>Mon, 08 Feb 2021 06:00:00 -0500</pubDate>
+      
+      <guid>/sunspot-an-alternative-approach/</guid>
+      <description>CrowdStrike recently wrote an article outlining their forensic analysis of SolarWind&amp;rsquo;s build environment and the implant that was placed there. This implant was used to inject malicious code into SolarWind&amp;rsquo;s Orion product. CrowdStrike has identified the actor behind this attack as &amp;ldquo;StellarParticle&amp;rdquo;.
+StellarParticle implanted malware on the build hosts which allowed them to edit the source code during the build phase and inject code into SolarWinds.Orion.Core.BusinessLayer.dll.
+I wanted to discover if alternative build injection methods were possible and I developed one that I thought was interesting and worth sharing.</description>
+    </item>
+    
     <item>
       <title>Exploiting Icecast 2.0.1 with Proof of Concept</title>
       <link>/exploiting-icecast-2.0.1-with-proof-of-concept/</link>

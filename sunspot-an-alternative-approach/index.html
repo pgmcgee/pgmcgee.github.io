@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<title>SUNSPOT: An Alternative Approach - Parker McGee</title>
+<meta property="og:title" content="SUNSPOT: An Alternative Approach - Parker McGee">
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" media="all">
+<link rel="stylesheet" href="/css/fonts.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    Parker McGee
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">SUNSPOT: An Alternative Approach</h1>
+    
+    <span class="article-date">February 8, 2021</span>
+    
+
+    
+
+    <div class="article-content">
+      <p>CrowdStrike recently <a href="https://www.crowdstrike.com/blog/sunspot-malware-technical-analysis/">wrote an article</a> outlining their forensic analysis of SolarWind&rsquo;s build environment and the implant that was placed there. This implant was used to inject malicious code into SolarWind&rsquo;s Orion product. CrowdStrike has identified the actor behind this attack as &ldquo;StellarParticle&rdquo;.</p>
+<p>StellarParticle implanted malware on the build hosts which allowed them to edit the source code during the build phase and inject code into <code>SolarWinds.Orion.Core.BusinessLayer.dll</code>.</p>
+<p>I wanted to discover if alternative build injection methods were possible and I developed one that I thought was interesting and worth sharing. Instead of running malware on the build host which would look for the MSBuild process, I wondered if it was possible to run code in TeamCity via a plugin.</p>
+<p>I discovered <a href="https://github.com/JetBrains/teamcity-dotnet-plugin">TeamCity&rsquo;s .NET plugin is open source</a>. From there, I was able to clone the repository and after some work I was able to build a JAR file that could be used in place of the .NET plugin that is distributed with TeamCity.</p>
+<p>Once I was able to do that, I knew that I could gain persistence in the build process. I developed a <a href="https://github.com/pgmcgee/swo-cli">very basic program</a> I could use to test build process injection. It supports a very simple version of injection, by inserting a DLL into the <code>plugins</code> directory during the build process. I set up a build for this project and set to work customizing the TeamCity .NET plugin to inject the DLL.</p>
+<p>Through some trial and error, I discovered <a href="https://github.com/JetBrains/teamcity-dotnet-plugin/blob/8f1b9c86a0500b7baaaca017e6fe2f4b5257b8b2/plugin-dotnet-agent/src/main/kotlin/jetbrains/buildServer/agent/runner/CommandExecutionAdapter.kt#L46"><code>CommandExecutionAdapter::processStarted</code></a> is run at the beginning of a .NET build. By injecting this code at <a href="https://github.com/JetBrains/teamcity-dotnet-plugin/blob/8f1b9c86a0500b7baaaca017e6fe2f4b5257b8b2/plugin-dotnet-agent/src/main/kotlin/jetbrains/buildServer/agent/runner/CommandExecutionAdapter.kt#L61">line 61</a>, it is possible to inject a DLL into the sample project. (<code>&quot;TVqQAAMAAAAEAAAA//8AAL...&quot;</code> is a Base64 encoding of the malicious DLL binary)</p>
+<pre><code>if(commandLine.arguments.size &gt;= 2 &amp;&amp; commandLine.arguments[1].value.endsWith(&quot;swo-cli.csproj&quot;)) {
+    workingDirectory.resolve(&quot;plugins&quot; + File.separator + &quot;swo-totally-legit.dll&quot;).writeBytes(
+        Base64.getDecoder().decode(
+            &quot;TVqQAAMAAAAEAAAA//8AAL...&quot;
+        )
+    )
+}
+</code></pre>
+<p>Using a similar method, it is possible to edit the source code of the project as well, similar to the SUNSPOT implant. We now essentially have full code execution and persistence in this build environment by changing out the original TeamCity .NET plugin with our malicious <code>plugin-dotnet-agent.jar</code>.</p>
+<p>This method offers an alternative method for persistence on build agents and injecting code into a build pipeline. In some scenarios, it may be easier to execute and hide than SUNSPOT as it does not rely on an external process that requires the <code>SeDebugPrivilege</code>. Instead, it simply requires swapping out the default TeamCity plugin JAR with the malicious one.</p>
+<p>To protect against this, blue teams must be looking at logins to and file changes on their build environments. Once installed, these TeamCity plugins should never change. Any file changes to the build agent (outside the work directories) must raise immediate red flags. In addition, blue teams must monitor the images used to create new build agents, especially if build agents are auto-scaled. Any changes to these images must be accounted for.</p>
+
+    </div>
+ 
+    <ul class="article-taxonomy">
+      
+    
+      
+  </article>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS feed</a>
+          </li>
+          <li>
+            <a href="https://github.com/pgmcgee"><i class="fa fa-github"></i> Code</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/pgmcgee"><i class="fa fa-twitter"></i> Twitter</a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
+
